@@ -1,11 +1,11 @@
-# readme
+# ReadMe
 
 Project 0 (Store) Code
 
-## maintainer
+## Maintainer
 
 - Shawn Halcomb
 
-## license
+## License
 
 [MIT License]()

@@ -131,7 +131,6 @@ namespace ProjectZero.App
                         continue;
                     }
 //PURCHASING INTEL
-                    Console.WriteLine("decision" + decision);
                     var temp2 = Console.ReadLine();
                     if (decision == " " || decision == "") { continue; }
                     if (decision == "p" || decision == "P")
