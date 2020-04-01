@@ -39,21 +39,21 @@ namespace ProjectZero.App
                 try
                 {
                     Console.WriteLine("First Name: ");
-                    string input12 = FilterName();
+                    string InputFName = FilterName();
                     Console.WriteLine("Last Name: ");
-                    string input22 = FilterName();
+                    string InputLName = FilterName();
                     Console.WriteLine("Phone Number: ");
-                    string input35 = FilterPhoneNumber();
+                    string InputPNumber = FilterPhoneNumber();
                     Console.WriteLine("Prefferred Store: ");
                     Console.WriteLine("[1] Dallas");
                     Console.WriteLine("[2] LA");
                     Console.WriteLine("[3] Tampa");
-                    string input44 = FilterLocation();
-                    AddPersonToDB(input12, input22, input35, input44);
-                    ActiveCustomer.FirstName = input12;
-                    ActiveCustomer.LastName = input22;
-                    ActiveCustomer.PhoneNumber = input35;
-                    ActiveCustomer.PrefLocation = input44;
+                    string InputPrefLoc = FilterLocation();
+                    AddPersonToDB(InputFName, InputLName, InputPNumber, InputPrefLoc);
+                    ActiveCustomer.FirstName = InputFName;
+                    ActiveCustomer.LastName = InputLName;
+                    ActiveCustomer.PhoneNumber = InputPNumber;
+                    ActiveCustomer.PrefLocation = InputPrefLoc;
                     something = "S";
                 }
                 catch (DbUpdateException)
@@ -71,10 +71,10 @@ namespace ProjectZero.App
                 try
                 {
                     Console.WriteLine("Phone Number: ");
-                    string input444 = FilterPhoneNumber();
+                    string InputPrefLoc4 = FilterPhoneNumber();
                     using var context = new ProjectZeroContext();
                     var query = context.Customer
-                        .Where(s => s.PhoneNumber == input444)
+                        .Where(s => s.PhoneNumber == InputPrefLoc4)
                         .FirstOrDefault<Customer>();
                     ActiveCustomer.Id = query.Id;
                     ActiveCustomer.FirstName = query.FirstName;
