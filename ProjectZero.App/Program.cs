@@ -32,9 +32,9 @@ namespace ProjectZero.App
             Console.WriteLine("[S]\tSign in");
             Console.WriteLine("[E]\tExit\n");
             Console.WriteLine("Press corresponding key and hit enter." + "\n");
-            string something = Console.ReadLine();
+            string IntroChoice = Console.ReadLine();
 //CREATE USER
-            if (something == "C" || something == "c")
+            if (IntroChoice == "C" || IntroChoice == "c")
                 {
                 try
                 {
@@ -54,7 +54,7 @@ namespace ProjectZero.App
                     ActiveCustomer.LastName = InputLName;
                     ActiveCustomer.PhoneNumber = InputPNumber;
                     ActiveCustomer.PrefLocation = InputPrefLoc;
-                    something = "S";
+                    IntroChoice = "S";
                 }
                 catch (DbUpdateException)
                 {
@@ -63,7 +63,7 @@ namespace ProjectZero.App
                 }
             }
 //SIGNIN USER
-            if (something == "S" || something == "s")
+            if (IntroChoice == "S" || IntroChoice == "s")
                 {
                     Console.Clear();
                 Console.WriteLine("### CPU EXPRESS ###\n");
@@ -143,14 +143,14 @@ namespace ProjectZero.App
                                 Console.WriteLine("[" + row.Id + "] " + row.Manufacturer + " " + row.Brand + " " + row.Model + " ($" + row.Price + ") Stock: " + row.Quantity);
                             }
                         Console.WriteLine("Type the [ID] for the item you want to purchase.");
-                        string somethingagain = Console.ReadLine();
-                        if (somethingagain != "4" && somethingagain != "5" && somethingagain != "6")
+                        string IntroChoiceagain = Console.ReadLine();
+                        if (IntroChoiceagain != "4" && IntroChoiceagain != "5" && IntroChoiceagain != "6")
                         {
                             Console.WriteLine("Failed to make purchase, press any key.");
                             var waiting123 = Console.ReadLine();
                             continue;
                         }
-                        Product ActiveProduct = context.Product.First(a => a.Id == int.Parse(somethingagain));
+                        Product ActiveProduct = context.Product.First(a => a.Id == int.Parse(IntroChoiceagain));
                             if (ActiveProduct.Quantity < 1)
                             {
                                 Console.WriteLine("ITEM IS CURRENTLY OUT OF STOCK");
@@ -227,14 +227,14 @@ namespace ProjectZero.App
                                 Console.WriteLine("[" + row.Id + "] " + row.Manufacturer + " " + row.Brand + " " + row.Model + " ($" + row.Price + ") Stock: " + row.Quantity);
                             }
                         Console.WriteLine("Type the [ID] for the item you want to purchase.");
-                        string somethingagain = Console.ReadLine();
-                        if (somethingagain != "1" && somethingagain != "2" && somethingagain != "3")
+                        string IntroChoiceagain = Console.ReadLine();
+                        if (IntroChoiceagain != "1" && IntroChoiceagain != "2" && IntroChoiceagain != "3")
                         {
                             Console.WriteLine("Failed to make purchase, press any key.");
                             var waiting123 = Console.ReadLine();
                             continue;
                         }
-                        Product ActiveProduct = context.Product.First(a => a.Id == int.Parse(somethingagain));
+                        Product ActiveProduct = context.Product.First(a => a.Id == int.Parse(IntroChoiceagain));
                         if (ActiveProduct.Quantity < 1)
                         {
                             Console.WriteLine("ITEM IS CURRENTLY OUT OF STOCK");
@@ -309,14 +309,14 @@ namespace ProjectZero.App
                         foreach (var row in context.Product)
                                 Console.WriteLine("[" + row.Id + "] " + row.Manufacturer + " " + row.Brand + " " + row.Model + " ($" + row.Price + ") Stock: " + row.Quantity); 
                         Console.WriteLine("Type the [ID] for the item you want to purchase.");
-                        string somethingagain = Console.ReadLine();
-                        if (somethingagain != "1" && somethingagain != "2" && somethingagain != "3" && somethingagain != "4" && somethingagain != "5" && somethingagain != "6")
+                        string IntroChoiceagain = Console.ReadLine();
+                        if (IntroChoiceagain != "1" && IntroChoiceagain != "2" && IntroChoiceagain != "3" && IntroChoiceagain != "4" && IntroChoiceagain != "5" && IntroChoiceagain != "6")
                         {
                             Console.WriteLine("Failed to make purchase, press any key.");
                             var waiting123 = Console.ReadLine();
                             continue;
                         }
-                        Product ActiveProduct = context.Product.First(a => a.Id == int.Parse(somethingagain));
+                        Product ActiveProduct = context.Product.First(a => a.Id == int.Parse(IntroChoiceagain));
                         if (ActiveProduct.Quantity < 1)
                         {
                             Console.WriteLine("ITEM IS CURRENTLY OUT OF STOCK");
