@@ -32,9 +32,9 @@ namespace ProjectZero.App
             Console.WriteLine("[S]\tSign in");
             Console.WriteLine("[E]\tExit\n");
             Console.WriteLine("Press corresponding key and hit enter." + "\n");
-            string something = Console.ReadLine();
+            string input = Console.ReadLine();
 //CREATE USER
-            if (something == "C" || something == "c")
+            if (input == "C" || input == "c")
                 {
                 try
                 {
@@ -54,7 +54,7 @@ namespace ProjectZero.App
                     ActiveCustomer.LastName = InputLName;
                     ActiveCustomer.PhoneNumber = InputPNumber;
                     ActiveCustomer.PrefLocation = InputPrefLoc;
-                    something = "S";
+                    input = "S";
                 }
                 catch (DbUpdateException)
                 {
